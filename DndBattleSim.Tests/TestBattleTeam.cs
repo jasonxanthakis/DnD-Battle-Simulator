@@ -29,9 +29,9 @@ namespace DndBattleSim.Tests
             MockUserInput mockUserInput3 = new MockUserInput("cleric");
 
             // Act
-            ICharacter hero1 = BattleTeam.CreateCharacter(mockUserInput1);
-            ICharacter hero2 = BattleTeam.CreateCharacter(mockUserInput2);
-            ICharacter hero3 = BattleTeam.CreateCharacter(mockUserInput3);
+            ICharacter hero1 = BattleTeam.CreateCharacter(mockUserInput1, "example team");
+            ICharacter hero2 = BattleTeam.CreateCharacter(mockUserInput2, "example team");
+            ICharacter hero3 = BattleTeam.CreateCharacter(mockUserInput3, "example team");
 
             // Assert
             Assert.Multiple(() =>

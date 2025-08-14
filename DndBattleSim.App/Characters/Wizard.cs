@@ -4,7 +4,7 @@ namespace DndBattleSim.App.Characters
 {
     public class Wizard : Character
     {
-        public Wizard(IRandomiser randomiser) : base(randomiser)
+        public Wizard(IRandomiser randomiser, string teamName) : base(randomiser, teamName)
         {
             this.Attack *= 2;
         }

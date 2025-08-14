@@ -21,8 +21,8 @@ namespace DndBattleSim.Tests
         public void Check_That_RandomAttack_Works_As_Intended()
         {
             // Act
-            var cleric = new Cleric(this.mockRandomiser.Object);
-            var enemy = new Warrior(this.mockRandomiser.Object);
+            var cleric = new Cleric(this.mockRandomiser.Object, "example team");
+            var enemy = new Warrior(this.mockRandomiser.Object, "example team");
             cleric.RandomAttack(enemy);
 
             // Assert

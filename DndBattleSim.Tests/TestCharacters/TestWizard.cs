@@ -21,7 +21,7 @@ namespace DndBattleSim.Tests
         public void Check_That_HP_Value_Is_Expected_Value()
         {
             // Act
-            var wizard = new Wizard(this.mockRandomiser.Object);
+            var wizard = new Wizard(this.mockRandomiser.Object, "example team");
 
             // Assert
             Assert.That(wizard.Attack, Is.EqualTo(20));
@@ -31,8 +31,8 @@ namespace DndBattleSim.Tests
         public void Check_That_RandomAttack_Works_As_Intended()
         {
             // Act
-            var wizard = new Wizard(this.mockRandomiser.Object);
-            var enemy = new Warrior(this.mockRandomiser.Object);
+            var wizard = new Wizard(this.mockRandomiser.Object, "example team");
+            var enemy = new Warrior(this.mockRandomiser.Object, "example team");
             wizard.RandomAttack(enemy);
 
             // Assert

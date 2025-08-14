@@ -6,7 +6,7 @@ namespace DndBattleSim.Tests
 {
     public class TestCharacterStub : Character
     {
-        public TestCharacterStub(IRandomiser randomiser) : base(randomiser){}
+        public TestCharacterStub(IRandomiser randomiser, string teamName) : base(randomiser, teamName){}
     }
 
     [TestFixture]
@@ -30,8 +30,8 @@ namespace DndBattleSim.Tests
         public void Check_That_HP_Value_Is_Expected_Value()
         {
             // Act
-            var character1 = new TestCharacterStub(this.mockRandomiser1.Object);
-            var character2 = new TestCharacterStub(this.mockRandomiser2.Object);
+            var character1 = new TestCharacterStub(this.mockRandomiser1.Object, "example team");
+            var character2 = new TestCharacterStub(this.mockRandomiser2.Object, "example team");
 
             // Assert
             Assert.Multiple(() =>
@@ -45,8 +45,8 @@ namespace DndBattleSim.Tests
         public void Check_That_Attack_Value_Is_Expected_Value()
         {
             // Act
-            var character1 = new TestCharacterStub(this.mockRandomiser1.Object);
-            var character2 = new TestCharacterStub(this.mockRandomiser2.Object);
+            var character1 = new TestCharacterStub(this.mockRandomiser1.Object, "example team");
+            var character2 = new TestCharacterStub(this.mockRandomiser2.Object, "example team");
 
             // Assert
             Assert.Multiple(() =>
@@ -60,7 +60,7 @@ namespace DndBattleSim.Tests
         public void Check_That_GotHit_Acts_As_Intended()
         {
             // Act
-            var character = new TestCharacterStub(this.mockRandomiser2.Object);
+            var character = new TestCharacterStub(this.mockRandomiser2.Object, "example team");
             character.GotHit(5);
 
             // Assert
@@ -71,8 +71,8 @@ namespace DndBattleSim.Tests
         public void Check_That_RandomAttack_Works_As_Intended()
         {
             // Act
-            var hero = new TestCharacterStub(this.mockRandomiser2.Object);
-            var enemy = new TestCharacterStub(this.mockRandomiser2.Object);
+            var hero = new TestCharacterStub(this.mockRandomiser2.Object, "example team");
+            var enemy = new TestCharacterStub(this.mockRandomiser2.Object, "example team");
             hero.RandomAttack(enemy);
 
             // Assert

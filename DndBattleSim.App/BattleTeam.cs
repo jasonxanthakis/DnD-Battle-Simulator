@@ -18,9 +18,9 @@ namespace DndBattleSim.App.BattleTeams
             this.teamName = BattleTeam.GetTeamName(input);
 
             // Create Characters
-            this.team.Add(BattleTeam.CreateCharacter(input));
-            this.team.Add(BattleTeam.CreateCharacter(input));
-            this.team.Add(BattleTeam.CreateCharacter(input));
+            this.team.Add(BattleTeam.CreateCharacter(input, this.teamName));
+            this.team.Add(BattleTeam.CreateCharacter(input, this.teamName));
+            this.team.Add(BattleTeam.CreateCharacter(input, this.teamName));
         }
 
         public static string GetTeamName(IUserInput input)
@@ -35,7 +35,7 @@ namespace DndBattleSim.App.BattleTeams
             return userInput;
         }
 
-        public static ICharacter CreateCharacter(IUserInput input)
+        public static ICharacter CreateCharacter(IUserInput input, string teamName)
         {
             string? userInput;
             while (true)
@@ -53,15 +53,15 @@ namespace DndBattleSim.App.BattleTeams
 
             if (userInput == "warrior")
             {
-                return new Warrior(new Randomiser());
+                return new Warrior(new Randomiser(), teamName);
             }
             else if (userInput == "wizard")
             {
-                return new Wizard(new Randomiser());
+                return new Wizard(new Randomiser(), teamName);
             }
             else
             {
-                return new Cleric(new Randomiser());
+                return new Cleric(new Randomiser(), teamName);
             }
         }
     }

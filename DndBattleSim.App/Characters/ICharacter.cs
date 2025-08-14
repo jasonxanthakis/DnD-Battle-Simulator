@@ -4,6 +4,7 @@ namespace DndBattleSim.App.Characters
     {
         int HP { get; }
         int Attack { get; }
+        string Team { get; }
 
         void RandomAttack(ICharacter character);
 

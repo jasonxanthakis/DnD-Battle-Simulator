@@ -9,7 +9,7 @@ namespace DndBattleSim.App.BattleSimulator
     public sealed class BattleSim
     {
         private static BattleSim _instance;
-        private IUserInput InputSource;
+        private readonly IUserInput InputSource;
 
         private BattleSim(IUserInput input)
         {
