@@ -2,11 +2,21 @@
 
 A console game that allows the creation of two teams (3 characters each) that fight in a turn based environment in a last man standing scenario.
 
+## Prerequisites
+- Microsoft .NET 8.0.0^
+
 ## Installation
+1. Clone the repository
+2. Change directory into the main directory `DnD-Battle-Simulator`
+3. Run the command `dotnet build`
 
 ## How to Run the Game
+1. Change directory into the app using `cd .\DndBattleSim.App\`
+2. Run the command `dotnet run`
 
 ## How to Run the Tests
+1. Change directory into the main directory `DnD-Battle-Simulator`
+2. Run the command `dotnet test`
 
 ## Playing the Game
 This is an explanation of how the game is played when run:
