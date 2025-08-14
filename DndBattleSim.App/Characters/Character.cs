@@ -7,6 +7,7 @@ namespace DndBattleSim.App.Characters
         public int HP { get; protected set; }
         public int Attack { get; protected set; }
         public string Team { get; }
+        public string Name { get; protected set; }
 
         public Character(IRandomiser randomiser, string teamName)
         {

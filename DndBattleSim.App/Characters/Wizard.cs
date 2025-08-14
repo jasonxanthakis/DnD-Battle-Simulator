@@ -7,6 +7,7 @@ namespace DndBattleSim.App.Characters
         public Wizard(IRandomiser randomiser, string teamName) : base(randomiser, teamName)
         {
             this.Attack *= 2;
+            this.Name = "Wizard";
         }
 
         public override void RandomAttack(ICharacter enemy)

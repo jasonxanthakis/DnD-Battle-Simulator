@@ -64,5 +64,18 @@ namespace DndBattleSim.App.BattleTeams
                 return new Cleric(new Randomiser(), teamName);
             }
         }
+
+        public int AliveCount()
+        {
+            int i = 0;
+            foreach (ICharacter hero in this.team)
+            {
+                if (hero.HP > 0)
+                {
+                    i++;
+                }
+            }
+            return i;
+        }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DndBattleSim.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a81b855b18790b73cf5387c1537f6a1e3e418790")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+442329bd453631dc863804bb9f89ad1040622d99")]
 [assembly: System.Reflection.AssemblyProductAttribute("DndBattleSim.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DndBattleSim.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

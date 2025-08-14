@@ -3,6 +3,7 @@ using DndBattleSim.App.Characters;
 using DndBattleSim.App.Randomisers;
 using DndBattleSim.App.BattleTeams;
 using DndBattleSim.App.UserInput;
+using System.Collections;
 
 namespace DndBattleSim.App.BattleSimulator
 {
@@ -42,7 +43,7 @@ namespace DndBattleSim.App.BattleSimulator
                 this.turnQueue = SetUpQueue(this.turnQueue, this.team1, this.team2);
 
                 // Turn loop
-                // this.RunTurnLoop();
+                this.RunTurnLoop(new Randomiser());
 
                 // Check if they want to play again
                 play = this.PlayAgain(this.InputSource);
@@ -69,17 +70,95 @@ namespace DndBattleSim.App.BattleSimulator
             return turnQueue;
         }
 
-        public void RunTurnLoop()
+        public Queue<ICharacter> CleanQueue(Queue<ICharacter> turnQueue)
         {
-            while (this.team1.team.Count > 0 && this.team2.team.Count > 0)
+            for (int i = turnQueue.Count; i > 0; i--)
             {
-                ICharacter currentHero = this.turnQueue.Dequeue();
+                var current = turnQueue.Dequeue();
+                if (current.HP > 0)
+                {
+                    turnQueue.Enqueue(current);
+                }
+            }
 
-                // select enemy to attack
+            return turnQueue;
+        }
 
-                // attack enemy
+        public void RunTurnLoop(IRandomiser randomiser)
+        {
+            int turnCount = 1;
+            while (this.team1.AliveCount() > 0 && this.team2.AliveCount() > 0)
+            {
+                this.CleanQueue(this.turnQueue);
 
-                // if enemy died or hero died > recreate Queue
+                System.Console.WriteLine($"Turn {turnCount}");
+                this.OutputCharacters();
+
+                ICharacter currentHero = this.turnQueue.Peek();
+                string team = currentHero.Team;
+
+                ICharacter enemy;
+                if (this.team1.teamName == team)
+                {
+                    var aliveCharacters = this.team2.team.Where(c => c.HP > 0).ToList();
+                    enemy = aliveCharacters[randomiser.Next(0, aliveCharacters.Count)];
+                }
+                else if (this.team2.teamName == team)
+                {
+                    var aliveCharacters = this.team1.team.Where(c => c.HP > 0).ToList();
+                    enemy = aliveCharacters[randomiser.Next(0, aliveCharacters.Count)];
+                }
+                else
+                {
+                    throw new Exception("Fatal error: couldn't identify team");
+                }
+
+                currentHero.RandomAttack(enemy);
+
+                this.turnQueue.Dequeue();
+                if (currentHero.HP > 0)
+                {
+                    this.turnQueue.Enqueue(currentHero);
+                }
+
+                turnCount++;
+            }
+
+            
+            this.OutputCharacters();
+
+            this.OutputWinningText();
+        }
+
+        public void OutputCharacters()
+        {
+            foreach (var hero in this.team1.team)
+            {
+                System.Console.Write($" {hero.Name} : {hero.HP}HP  {(hero.HP <= 0 ? "(DEAD)" : "")}  ");
+            }
+            System.Console.Write("\n");
+            foreach (var hero in this.team2.team)
+            {
+                System.Console.Write($" {hero.Name} : {hero.HP}HP  {(hero.HP <= 0 ? "(DEAD)" : "")}  ");
+            }
+            System.Console.Write("\n");
+            System.Console.WriteLine();
+        }
+
+        public void OutputWinningText()
+        {
+            if (this.team1.team.Count == 0 && this.team2.team.Count == 0)
+            {
+                System.Console.WriteLine("Plotwist: Everyone is dead, so it's a draw");
+            }
+
+            if (this.team1.team.Count == 0)
+            {
+                System.Console.WriteLine($"Congratulations to {this.team1.teamName}! They are victorious!");
+            }
+            else if (this.team2.team.Count == 0)
+            {
+                System.Console.WriteLine($"Congratulations to {this.team2.teamName}! They are victorious!");
             }
         }
 

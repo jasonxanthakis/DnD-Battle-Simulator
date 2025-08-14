@@ -78,8 +78,9 @@ namespace DndBattleSim.Tests
             // Assert
             Assert.Multiple(() =>
             {
-                Assert.That(turnQueue.Count, Is.EqualTo(6));
-                Assert.That(turnQueue.Peek, Is.InstanceOf<Warrior>());
+                Assert.That(turnQueue, Has.Count.EqualTo(6));
+                Assert.That(turnQueue.Peek(), Is.InstanceOf<Warrior>());
+                Assert.That(turnQueue.Peek().Team, Is.EqualTo("team1"));
             });
         }
     }

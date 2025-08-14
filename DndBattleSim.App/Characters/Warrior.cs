@@ -7,6 +7,7 @@ namespace DndBattleSim.App.Characters
         public Warrior(IRandomiser randomiser, string teamName) : base(randomiser, teamName)
         {
             this.HP += 5;
+            this.Name = "Warrior";
         }
     }
 }
