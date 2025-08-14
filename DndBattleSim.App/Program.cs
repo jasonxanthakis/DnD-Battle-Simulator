@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("hello world");
-            var game = BattleSimulator.BattleSim.CreateGame();
+            var game = BattleSimulator.BattleSim.CreateGame(new UserInput.ConsoleUserInput());
+            game.RunGame();
         }
     }
 }
