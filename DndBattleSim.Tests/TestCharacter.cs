@@ -34,8 +34,11 @@ namespace DndBattleSim.Tests
             var character2 = new TestCharacterStub(this.mockRandomiser2.Object);
 
             // Assert
-            Assert.That(character1.HP, Is.EqualTo(1));
-            Assert.That(character2.HP, Is.EqualTo(10));
+            Assert.Multiple(() =>
+            {
+                Assert.That(character1.HP, Is.EqualTo(1));
+                Assert.That(character2.HP, Is.EqualTo(10));
+            });
         }
 
         [Test]
@@ -46,8 +49,11 @@ namespace DndBattleSim.Tests
             var character2 = new TestCharacterStub(this.mockRandomiser2.Object);
 
             // Assert
-            Assert.That(character1.Attack, Is.EqualTo(1));
-            Assert.That(character2.Attack, Is.EqualTo(10));
+            Assert.Multiple(() =>
+            {
+                Assert.That(character1.Attack, Is.EqualTo(1));
+                Assert.That(character2.Attack, Is.EqualTo(10));
+            });
         }
 
         [Test]
