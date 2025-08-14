@@ -27,7 +27,7 @@ namespace DndBattleSim.App.BattleSimulator
 
         private BattleTeam team1;
         private BattleTeam team2;
-        private Queue<ICharacter>? turnQueue = new Queue<ICharacter>();
+        private Queue<ICharacter> turnQueue = new Queue<ICharacter>();
 
         public void RunGame()
         {
@@ -39,14 +39,7 @@ namespace DndBattleSim.App.BattleSimulator
                 this.team2 = new BattleTeam("2", this.InputSource);
 
                 // Set up Turn Queue
-                foreach (ICharacter hero in this.team1.team)
-                {
-                    this.turnQueue.Enqueue(hero);
-                }
-                foreach (ICharacter hero in this.team2.team)
-                {
-                    this.turnQueue.Enqueue(hero);
-                }
+                this.turnQueue = SetUpQueue(this.turnQueue, this.team1, this.team2);
 
                 // Turn loop
                 // this.RunTurnLoop();
@@ -56,13 +49,37 @@ namespace DndBattleSim.App.BattleSimulator
             }
         }
 
+        public Queue<ICharacter> SetUpQueue(Queue<ICharacter> turnQueue, BattleTeam team1, BattleTeam team2)
+        {
+            foreach (ICharacter hero in team1.team)
+            {
+                if (hero.HP > 0)
+                {
+                    turnQueue.Enqueue(hero);
+                }
+            }
+            foreach (ICharacter hero in team2.team)
+            {
+                if (hero.HP > 0)
+                {
+                    turnQueue.Enqueue(hero);
+                }
+            }
+
+            return turnQueue;
+        }
+
         public void RunTurnLoop()
         {
             while (this.team1.team.Count > 0 && this.team2.team.Count > 0)
             {
                 ICharacter currentHero = this.turnQueue.Dequeue();
-                
 
+                // select enemy to attack
+
+                // attack enemy
+
+                // if enemy died or hero died > recreate Queue
             }
         }
 
