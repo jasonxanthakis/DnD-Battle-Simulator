@@ -4,18 +4,18 @@ namespace DndBattleSim.App.Characters
 {
     public abstract class Character : ICharacter
     {
-        public int HP { get; private set; }
-        public int Attack { get; private set; }
+        public int HP { get; protected set; }
+        public int Attack { get; protected set; }
 
         public Character(IRandomiser randomiser)
         {
-            HP = randomiser.Next(1, 11);
-            Attack = randomiser.Next(1, 11);
+            this.HP = randomiser.Next(1, 11);
+            this.Attack = randomiser.Next(1, 11);
         }
 
-        public void RandomAttack()
+        public virtual void RandomAttack(ICharacter enemy)
         {
-
+            enemy.GotHit(this.Attack);
         }
 
         public void GotHit(int damage)

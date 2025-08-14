@@ -66,5 +66,17 @@ namespace DndBattleSim.Tests
             // Assert
             Assert.That(character.HP, Is.EqualTo(5));
         }
+
+        [Test]
+        public void Check_That_RandomAttack_Works_As_Intended()
+        {
+            // Act
+            var hero = new TestCharacterStub(this.mockRandomiser2.Object);
+            var enemy = new TestCharacterStub(this.mockRandomiser2.Object);
+            hero.RandomAttack(enemy);
+
+            // Assert
+            Assert.That(enemy.HP, Is.EqualTo(0));
+        }
     }
 }
