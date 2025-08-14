@@ -1,0 +1,15 @@
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\bin\Debug\net9.0\DndBattleSim.App.exe
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\bin\Debug\net9.0\DndBattleSim.App.deps.json
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\bin\Debug\net9.0\DndBattleSim.App.runtimeconfig.json
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\bin\Debug\net9.0\DndBattleSim.App.dll
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\bin\Debug\net9.0\DndBattleSim.App.pdb
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.AssemblyInfoInputs.cache
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.AssemblyInfo.cs
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.csproj.CoreCompileInputs.cache
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.sourcelink.json
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.dll
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\refint\DndBattleSim.App.dll
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.pdb
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\DndBattleSim.App.genruntimeconfig.cache
+D:\repos\LaFosseAcademy\DeepDive\Test1\DnD-Battle-Simulator\DndBattleSim.App\obj\Debug\net9.0\ref\DndBattleSim.App.dll
